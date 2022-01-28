@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} Bosh sahifa {% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+{{ user.isername }}, Ro`yxatdan utgansiz!
+<p><a href="{% url 'logout' %}">Log out</a></p>
+{% else %}
+<p> Saytga kirish uchun ro`yxatdan uting! </p>
+<a href="{% url 'login' %}">Login</a>
+<a href="{% url 'signup' %}">Ro`yxatdan utish</a>
+{% endif %}
+{% endblock content %}

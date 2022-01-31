@@ -3,7 +3,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-{{ user.isername }}, Ro`yxatdan utgansiz!
+{{ user.username }}, Ro`yxatdan utgansiz!
 <p><a href="{% url 'logout' %}">Log out</a></p>
 {% else %}
 <p> Saytga kirish uchun ro`yxatdan uting! </p>

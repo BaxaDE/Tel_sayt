@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %} Login sahifasi {% endblock title %}
 
 {% block content %}
-<h2> Log In </h2>
-<from method="post">{% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Login</button>
-</from>
+        <h2> <center>Log In</center> </h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+        <div class="mb-3">
+            <div class="container pr-10">
+                <label for="exampleFormControlInput1" class="form-label">Username</label>
+                {{ form.username }}
+            </div>
+<!--          <input type="username" class="form-control" id="exampleFormControlInput1" placeholder="Ismingizni kiriting..">-->
+        </div>
+        <div class="mb-3">
+            <div class="container">
+                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                {{form.password}}
+            </div>
+<!--          <input type="password" class="form-control" id="exampleFormControlInput2">-->
+        </div>
+        <button class="btn btn-outline-primary" type="submit">Login</button>
+    </div>
+</form>
 {% endblock content %}
